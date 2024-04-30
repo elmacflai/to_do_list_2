@@ -6,9 +6,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #9ae4e8 url(https://web.archive.org/web/20071231085815im_/http://assets3.twitter.com/images/bg.gif?1198546588) fixed no-repeat top left;
+}
+
 header {
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
