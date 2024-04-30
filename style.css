@@ -6,3 +6,9 @@
     box-sizing: border-box;
 }
 
+header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
