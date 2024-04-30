@@ -63,3 +63,10 @@ header {
     border-radius: 12px;
     font-family: "RocknRoll",sans-serif;
 }
+
+.toDoItemContainer {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: "roboto",sans-serif;
+}
