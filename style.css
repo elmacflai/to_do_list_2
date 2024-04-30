@@ -27,3 +27,12 @@ header {
     border-radius: 4px;
 }
 
+#addButton {
+    width: 15%;
+    height: 25px;
+    margin: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "RocknRoll",sans-serif;;
+}
