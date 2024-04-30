@@ -36,3 +36,7 @@ header {
     transition: 0.3s;
     font-family: "RocknRoll",sans-serif;;
 }
+
+#addButton:hover {
+    background-color: #bbb;
+}
