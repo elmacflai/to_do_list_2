@@ -29,3 +29,20 @@ function addItems () {
    </li>`);
    }
    
+   function deleteItems() {
+
+    deleteButtons = document.querySelectorAll("#delete") 
+    
+    console.log(deleteButtons);
+    
+    for (let i=0; i<deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener("click", function(){
+            console.log(toDoItems);
+            toDoItems=toDoItems.filter( function(toDo, index){
+                return toDo[i]!== toDo[index]
+            })
+            renderToDos();
+        })
+    }
+        
+    }
