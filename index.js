@@ -29,12 +29,9 @@ function addItems () {
    </li>`);
    }
    
-   function deleteItems() {
+function deleteItems() {
 
     deleteButtons = document.querySelectorAll("#delete") 
-    
-    console.log(deleteButtons);
-    
     for (let i=0; i<deleteButtons.length; i++) {
         deleteButtons[i].addEventListener("click", function(){
             console.log(toDoItems);
@@ -46,3 +43,10 @@ function addItems () {
     }
         
     }
+
+addButton.addEventListener("click", function(){
+    
+        addItems();
+        renderToDos()  
+        deleteItems();
+    })
