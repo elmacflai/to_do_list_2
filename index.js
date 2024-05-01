@@ -18,3 +18,14 @@ function renderToDos(){
          })
      }
 }
+
+function addItems () {
+    toDoItems.push(`<li class="toDoItemContainer">${toDoInput.value}
+    <div class="buttonContainer">
+        <button id="check">Check</button>
+        <button id="delete">Delete</button>
+    </div>
+    
+   </li>`);
+   }
+   
