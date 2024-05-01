@@ -7,16 +7,16 @@ let deleteButtons  ;
 function renderToDos(){
     toDoInput.value = "";
      toDoList.innerHTML = toDoItems
-     deleteButtons = document.querySelectorAll("#delete") 
-     for (let i=0; i<deleteButtons.length; i++) {
-         deleteButtons[i].addEventListener("click", function(){
-             console.log(toDoItems);
-             toDoItems=toDoItems.filter( function(toDo, index){
-                 return toDo[i]!== toDo[index]
-             })
-             renderToDos();
-         })
-     }
+      //Logica para agregar addEventListener al boton 
+      deleteButtons = document.querySelectorAll("#delete") 
+      for (let i=0; i<deleteButtons.length; i++) {
+          deleteButtons[i].addEventListener("click", function(){
+              toDoItems=toDoItems.filter( function(toDo, index){
+                  return toDo[i]!== toDo[index]
+              })
+              renderToDos();
+          })
+      }
 }
 
 function addItems () {
@@ -29,24 +29,8 @@ function addItems () {
    </li>`);
    }
    
-function deleteItems() {
-
-    deleteButtons = document.querySelectorAll("#delete") 
-    for (let i=0; i<deleteButtons.length; i++) {
-        deleteButtons[i].addEventListener("click", function(){
-            console.log(toDoItems);
-            toDoItems=toDoItems.filter( function(toDo, index){
-                return toDo[i]!== toDo[index]
-            })
-            renderToDos();
-        })
-    }
-        
-    }
-
 addButton.addEventListener("click", function(){
-    
         addItems();
-        renderToDos()  
-        deleteItems();
+        renderToDos();   
     })
+    
