@@ -3,16 +3,18 @@ const addButton = document.getElementById("addButton");
 let toDoItems = []
 const toDoList = document.querySelector(".toDoList");
 let deleteButtons  ;
+let likeButtons 
 
 function renderToDos(){
  toDoList.innerHTML = toDoItems.join("");
  deleteTweets();
+ likeTweets();
 }
 
 function addTweets () {
     toDoItems.push(`<li class="toDoItemContainer">${toDoInput.value}
     <div class="buttonContainer">
-        <button id="check">Like</button>
+        <button id="likeButtons">Like</button>
         <button id="delete">Delete</button>
     </div>
     
@@ -26,7 +28,7 @@ function deleteTweets () {
  deleteButtons = document.querySelectorAll("#delete") 
  for (let i=0; i<deleteButtons.length; i++) {
      deleteButtons[i].addEventListener("click", function(){
-        //console.log("deleting")
+        console.log("deleting")
          toDoItems=toDoItems.filter( function(toDo){
              return toDo!== toDoItems[i]
          })
@@ -34,8 +36,19 @@ function deleteTweets () {
      })
  }
 }
-addButton.addEventListener("click", function(){
-        addTweets();
-        renderToDos();   
-    })
 
+
+function likeTweets(){
+    likeButtons = document.querySelectorAll("#likeButtons") 
+    for (let i=0; i<likeButtons.length; i++) {
+        likeButtons[i].addEventListener("click", function(){
+        console.log("like")
+         })
+     }
+     
+}
+
+addButton.addEventListener("click", function(){
+    addTweets();
+    renderToDos();   
+})
