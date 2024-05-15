@@ -12,43 +12,45 @@ function renderToDos(){
 }
 
 function addTweets () {
-    toDoItems.push(`<li class="toDoItemContainer">${toDoInput.value}
+    toDoItems.push(`
+    <li class="toDoItemContainer">
+    <span class="heartSymbol"></span>
+    ${toDoInput.value}
     <div class="buttonContainer">
-        <button id="likeButtons">Like</button>
-        <button id="delete">Delete</button>
-    </div>
-    
-   </li>`);
+        <button class="likeButtons">Like</button>
+        <button class="delete">Delete</button>
+    </div> 
+   </li>
+   `);
    toDoInput.value = "";
    toDoList.innerHTML = toDoItems
    }
    
 function deleteTweets () {
- //Logica para agregar addEventListener al boton 
- deleteButtons = document.querySelectorAll("#delete") 
- for (let i=0; i<deleteButtons.length; i++) {
-     deleteButtons[i].addEventListener("click", function(){
-        console.log("deleting")
-         toDoItems=toDoItems.filter( function(toDo){
-             return toDo!== toDoItems[i]
-         })
+ deleteButtons = document.querySelectorAll(".delete");
+ deleteButtons.forEach((button, index) => {
+    button.addEventListener("click", function() {
+         console.log("deleting");
+         toDoItems.splice(index, 1);
          renderToDos();
-     })
- }
-}
-
+         });
+        });
+    }
+        
 
 function likeTweets(){
-    likeButtons = document.querySelectorAll("#likeButtons") 
-    for (let i=0; i<likeButtons.length; i++) {
-        likeButtons[i].addEventListener("click", function(){
-        console.log("like")
-         })
-     }
-     
+    likeButtons = document.querySelectorAll(".likeButtons") 
+    likeButtons.forEach((button) => {
+        button.addEventListener("click", function() {
+            console.log("like")
+            const liElement = button.closest(".toDoItemContainer");
+            const heartSymbol = liElement.querySelector(".heartSymbol");
+            heartSymbol.textContent = "❤️";
+        })
+    })
 }
 
 addButton.addEventListener("click", function(){
     addTweets();
     renderToDos();   
-})
+});
