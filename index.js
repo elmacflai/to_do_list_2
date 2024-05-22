@@ -14,8 +14,11 @@ function renderToDos(){
 function addTweets () {
     toDoItems.push(`
     <li class="toDoItemContainer">
+    <div>
     <span class="heartSymbol"></span>
     ${toDoInput.value}
+    </div>
+   
     <div class="buttonContainer">
         <button class="likeButtons">Like</button>
         <button class="delete">Delete</button>
